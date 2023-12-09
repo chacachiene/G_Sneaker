@@ -44,15 +44,15 @@ In one terminal window, run the command:
 ```bash
   cd client
 ```
-3.1. Install the dependencies:
+- Install the dependencies:
 ```bash
   npm install
 ```
-3.2. Create an .env file in the root directory and add your environment variables:
+- Create an .env file in the root directory and add your environment variables:
 ``` javascript
 REACT_APP_API_URL = "https://go-sneaker-api.onrender.com/api/v1"
 ```
-3.3. Running the Application
+- Running the Application
 In one terminal window, run the command:
   ```bash
   npm start 
