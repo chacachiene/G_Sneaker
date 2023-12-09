@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Box } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import Avatar from '@mui/material/Avatar'
 import './product.scss'
@@ -10,7 +9,6 @@ import { addToCart } from 'api/cartApi'
 import { addItem } from 'state/cart.js'
 
 import checkicon from 'assets/check.png'
-import { yellow } from '@mui/material/colors'
 
 const Products = () => {
   const shopItems = useSelector(state => state.product.products)
@@ -19,24 +17,18 @@ const Products = () => {
   const [itemButton, setItemButton] = useState([])
 
   useEffect(() => {
-    console.log('cart: ', cart)
     if(!cart || cart.length === 0){
-      console.log('shopItems: ', shopItems)
       setItemButton(shopItems)
     }
     else if (cart.length > 0) {
       const items = shopItems.filter(item => !cart.find(i => i.productId === item._id))
       setItemButton(items)
-      console.log('items: ', items)
     } 
   }, [shopItems, cart])
 
   const handleClick = item => {
-
-    console.log("item ",item)
     const fetchData = async () => {
       const data = await addToCart(item._id);
-      console.log(data)
       if (data)
       dispatch(addItem(data));
     }

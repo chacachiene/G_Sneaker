@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import Cart from 'components/Cart';
 import Products from 'components/Products';
-import { Box, useMediaQuery } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setProducts } from 'state/index.js';
 import { setCart} from 'state/cart.js';
 import { getAllProducts } from 'api/productApi.js';
@@ -15,18 +14,23 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getAllProducts();
-      dispatch(setProducts(data));
+      if (data){
+        console.log('products: ', data);
+        dispatch(setProducts(data));
+      }      
     }
     const fetchCart = async () => {
       const data = await getCartItems();
-      dispatch(setCart(data));
+      if (data){
+        dispatch(setCart(data));
+        console.log('cart: ', data);
+      }
     }
 
-    fetchCart();
     fetchData();
+    fetchCart();
+  // eslint-disable-next-line
   }, []);
-
-  const isPc = useMediaQuery('(min-width: 1000px)');
   return (
     <>
       <div className="containerApp">

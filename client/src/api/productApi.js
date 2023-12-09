@@ -7,7 +7,6 @@ export const getAllProducts = async () => {
             });
         
         const data = await response.json();
-        console.log(data)
         return data
     } 
     catch (error) {

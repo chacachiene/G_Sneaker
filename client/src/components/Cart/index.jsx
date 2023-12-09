@@ -8,7 +8,6 @@ import { updateItem, removeItem } from 'state/cart'
 import { deleteCartItem, updateCartItem } from 'api/cartApi.js'
 import './cart.scss'
 const Cart = () => {
-  const shopItems = useSelector(state => state.product.products)
   const cart = useSelector(state => state.cart.cart)
   const dispatch = useDispatch()
   const [sum, setSum] = useState(0)
@@ -25,13 +24,13 @@ const Cart = () => {
     fetchData();
   }
   const handleClickLower = (item, v) => {
-    if (v ==0){
+    if (v ===0){
       dispatch(removeItem(item._id))
       const fetchData = async () => {
         const data = await deleteCartItem(item._id);
-        console.log(data)
+        
         if (data){
-          console.log('data', data)
+          console.log('data is deleted' , data)
         }
       }
       fetchData();
@@ -41,9 +40,8 @@ const Cart = () => {
       dispatch(updateItem(newItem))
       const updateData = async () => {
         const data = await updateCartItem(newItem);
-        console.log(data)
         if (data){
-          console.log('data', data)
+          console.log('update data', data)
         }
       }
       updateData();
@@ -69,7 +67,7 @@ const Cart = () => {
         
         <div className="cart__items">
           {
-          !cart|| cart.length==0 ? (
+          !cart|| cart.length===0 ? (
             <div className="cart__empty">No items in cart</div>
           ) :
           cart.map(item => (

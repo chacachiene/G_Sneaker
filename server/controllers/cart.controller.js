@@ -30,7 +30,6 @@ export const updateCartItems = async (req, res) => {
 export const deleteCartItem = async (req, res) => {
     try{
         const { id } = req.params;
-        console.log(id)
         const cartItemExists = await CartItem.findById(id);
         
         if (!cartItemExists) return res.status(404).send('No cart item with that id');
@@ -44,9 +43,7 @@ export const deleteCartItem = async (req, res) => {
 export const createCartItem = async (req, res) => {
     try {
         const { productId } = req.body;
-        console.log(productId)
         const product = await Product.findById(productId);
-        console.log(product)
         const newCartItem = new CartItem({
             productName: product.name,
             price: product.price,
@@ -55,7 +52,6 @@ export const createCartItem = async (req, res) => {
             productId: product._id,
             color: product.color,
         });
-        console.log(newCartItem)
         const newCartItemSave = await newCartItem.save();
         res.status(201).json(newCartItemSave);
     } catch (error) {
