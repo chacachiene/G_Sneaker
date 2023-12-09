@@ -18,7 +18,7 @@ This document provides instructions on how to set up and run the project locally
 ### Installation
 1. Clone the repository:
 ```bash
-  git clone [https://github.com/chacachiene/g_sneaker.git](https://github.com/chacachiene/G_Sneaker.git)
+  git clone https://github.com/chacachiene/G_Sneaker.git
 ```
 
 2. Navigate to the server project directory:
