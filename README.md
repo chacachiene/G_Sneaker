@@ -1,7 +1,7 @@
 # G_Sneaker
 This mini-project is deployed at: https://go-sneaker-k1a2.onrender.com
 
-This document provides instructions on how to set up and run the project locally, as well as a link to a demo on Heroku.
+This document provides instructions on how to set up and run the project locally.
 
 ## Table of Contents
 ```
