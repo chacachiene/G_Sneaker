@@ -25,16 +25,16 @@ This document provides instructions on how to set up and run the project locally
 ```bash
   cd server
 ```
-    2. Install the dependencies:
+2.1. Install the dependencies:
     ```bash
     npm install
     ```
-    2. Create an .env file in the root directory and add your environment variables:
+2.1. Create an .env file in the root directory and add your environment variables:
     ```javascript
     MONGODB_URI=[your-mongodb-uri]
     PORT=[your-desired-port]
     ```
-    2. Running the Application
+2.1. Running the Application
     In one terminal window, run the command:
     ```bash
       npm run dev
