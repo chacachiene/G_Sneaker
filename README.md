@@ -56,6 +56,7 @@ npm install
     MONGODB_URI=[your-mongodb-uri]
     PORT=[your-desired-port]
 ```
+> If you have no data, u can use my mongodb collection, or create through the below API.
 - Running the Application
 In one terminal window, run the command:
 ```bash
